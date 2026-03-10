@@ -8,23 +8,37 @@ Este repositorio contiene mi primer proyecto práctico de infraestructura y cont
 * Nginx (Servidor web ligero basado en Alpine Linux)
 * Docker (Contenerización)
 * Git y GitHub (Control de versiones)
+* GitHub Actions (Integración Continua - CI)
+
+## Entendiendo el Proyecto (Para Principiantes)
+
+Si estás empezando en el mundo DevOps o Cloud, aquí tienes una explicación de los conceptos clave que se aplican en este proyecto:
+
+* **Imagen de Docker:** Es la receta o el paquete estático. Contiene un sistema operativo mínimo, el servidor web (Nginx) y los archivos de la página web.
+* **Contenedor:** Es el proceso en ejecución creado a partir de la imagen. Es un entorno aislado donde nuestra web funciona.
+* **Dockerfile:** El archivo de configuración donde definimos paso a paso cómo se debe construir la imagen de Docker.
+* **GitHub Actions (CI):** El proyecto incluye un pipeline automatizado. Cada vez que se sube nuevo código, un servidor de GitHub comprueba automáticamente que la imagen de Docker se puede construir correctamente sin errores.
 
 ## Instrucciones de Despliegue Local
 
 Para ejecutar este proyecto en local, es necesario tener Docker instalado y el servicio iniciado.
 
-1. Clonar el repositorio:
+**1. Clonar el repositorio:**
+Descarga los archivos del proyecto a tu equipo y entra en la carpeta.
 ```bash
 git clone [https://github.com/frxngv/mi-cv-devops.git](https://github.com/frxngv/mi-cv-devops.git)
 cd mi-cv-devops
 ```
 
-2. Construir la imagen de Docker:
+**2. Construir la imagen de Docker:**
+Este comando lee el `Dockerfile` y empaqueta la aplicación. El parámetro `-t mi-cv` le asigna ese nombre a la imagen, y el punto `.` le indica a Docker que busque los archivos en la carpeta actual.
 ```bash
 docker build -t mi-cv .
 ```
 
-3. Ejecutar el contenedor en segundo plano:
+**3. Ejecutar el contenedor en segundo plano:**
+Este comando arranca un contenedor basado en la imagen recién creada. 
+El parámetro `-d` lo ejecuta en segundo plano (liberando la terminal), y `-p 8080:80` conecta el puerto 8080 de tu ordenador con el puerto 80 del contenedor (el puerto por defecto de Nginx).
 ```bash
 docker run -d -p 8080:80 mi-cv
 ```
