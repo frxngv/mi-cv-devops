@@ -1,0 +1,22 @@
+name: CI Pipeline - Docker Build
+
+# 1. Cuándo queremos que se ejecute (Triggers)
+on:
+  push:
+    branches:
+      - main
+
+# 2. Qué tareas va a realizar (Jobs)
+jobs:
+  build:
+    # GitHub nos presta una máquina virtual Ubuntu gratis para ejecutar esto
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso A: GitHub Actions descarga tu código del repositorio a su máquina
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # Paso B: GitHub Actions ejecuta el comando de Docker para comprobar que compila
+      - name: Construir imagen de Docker
+        run: docker build -t mi-cv:test .
