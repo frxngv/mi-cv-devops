@@ -8,15 +8,32 @@ on:
 
 # 2. Qué tareas va a realizar (Jobs)
 jobs:
-  build:
+  build-and-publish:
     # GitHub nos presta una máquina virtual Ubuntu gratis para ejecutar esto
     runs-on: ubuntu-latest
 
+    # Le damos permiso para guardar cosas en tu cuenta
+    permissions:
+      packages: write
+      contents: read
+
     steps:
-      # Paso A: GitHub Actions descarga tu código del repositorio a su máquina
+      # GitHub Actions descarga tu código del repositorio a su máquina
       - name: Checkout del código
         uses: actions/checkout@v4
 
-      # Paso B: GitHub Actions ejecuta el comando de Docker para comprobar que compila
-      - name: Construir imagen de Docker
-        run: docker build -t mi-cv:test .
+      # GitHub Actions inicia sesión en tu almacén usando unas llaves automáticas
+      - name: Iniciar sesión en GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Ahora construye la imagen y además la sube (push: true)
+      - name: Construir y subir imagen
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository }}/mi-cv-devops:latest
