@@ -9,6 +9,7 @@ Este repositorio contiene mi primer proyecto práctico de infraestructura y cont
 * Docker (Contenerización)
 * Git y GitHub (Control de versiones)
 * GitHub Actions (Integración Continua - CI)
+* GitHub Container Registry (Almacén de Imágenes en la nube)
 
 ## Entendiendo el Proyecto (Para Principiantes)
 
@@ -17,11 +18,22 @@ Si estás empezando en el mundo DevOps o Cloud, aquí tienes una explicación de
 * **Imagen de Docker:** Es la receta o el paquete estático. Contiene un sistema operativo mínimo, el servidor web (Nginx) y los archivos de la página web.
 * **Contenedor:** Es el proceso en ejecución creado a partir de la imagen. Es un entorno aislado donde nuestra web funciona.
 * **Dockerfile:** El archivo de configuración donde definimos paso a paso cómo se debe construir la imagen de Docker.
+* **CI (Integración Continua):** Gracias a GitHub Actions, cada vez que se sube un cambio al repositorio, un "robot" comprueba automáticamente que la imagen de Docker se construye sin errores y la publica en el almacén de GitHub (GHCR).
 * **GitHub Actions (CI):** El proyecto incluye un pipeline automatizado. Cada vez que se sube nuevo código, un servidor de GitHub comprueba automáticamente que la imagen de Docker se puede construir correctamente sin errores.
 
 ## Instrucciones de Despliegue Local
 
-Para ejecutar este proyecto en local, es necesario tener Docker instalado y el servicio iniciado.
+Hay dos formas de ejecutar este proyecto en tu máquina. En ambos casos, necesitas tener Docker instalado y ejecutándose.
+
+### Opción A: Ejecución rápida desde la nube (Recomendado)
+No necesitas descargar el código fuente. Puedes decirle a Docker que descargue y ejecute directamente la imagen pre-construida desde mi almacén público en GitHub con un solo comando:
+
+```bash
+docker run -d -p 8080:80 ghcr.io/frxngv/mi-cv-devops:latest
+```
+
+### Opción B: Construcción manual en local
+Si prefieres descargar el código fuente y construir la imagen tú mismo paso a paso:
 
 **1. Clonar el repositorio:**
 Descarga los archivos del proyecto a tu equipo y entra en la carpeta.
