@@ -1,7 +1,309 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hello World!</h1>
-        <h2>My name is Fran and this is my first docker project.</h2>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Tu Nombre - Cloud & DevOps Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0f172a;    
+            --secondary-color: #3b82f6;  
+            --text-main: #334155;        
+            --text-light: #64748b;       
+            --bg-body: #f1f5f9;          
+            --bg-card: #ffffff;          
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 3rem 1rem;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3.5rem 3rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .role-title {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+
+        .contact-grid a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .contact-grid a:hover {
+            color: white;
+        }
+
+        .cv-body {
+            padding: 3rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p.summary {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-badge {
+            background-color: #eff6ff;
+            color: var(--secondary-color);
+            border: 1px solid #bfdbfe;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .timeline-subtitle {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        
+        ul.tasks {
+            list-style-type: none;
+            padding-left: 0.5rem;
+        }
+
+        ul.tasks li {
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        ul.tasks li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header>
+            <h1>Francisco González-Llanos Vivanco</h1>
+            <div class="role-title">Estudiante de Ingeniería Informática | DevOps & Cloud</div>
+            
+            <div class="contact-grid">
+                <a href="mailto:frxngv@gmail.com"><i class="fas fa-envelope"></i> frxngv@gmail.com</a>
+                <a href="https://github.com/frxngv" target="_blank"><i class="fab fa-github"></i> github.com/frxngv</a>
+                <a href="https://linkedin.com/in/fran-glez" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/tu-perfil</a>
+                <span><i class="fas fa-map-marker-alt"></i> Asturias, España</span>
+            </div>
+        </header>
+
+        <div class="cv-body">
+            <section>
+                <h2><i class="fas fa-user-circle" style="color: var(--secondary-color); margin-right: 10px;"></i> Perfil Profesional</h2>
+                <p class="summary">
+                    Estudiante de 4º año de Ingeniería Informática con sólida base técnica y fuerte orientación a la cultura DevOps y Cloud Computing. Apasionado por la automatización, la infraestructura como código y el diseño de pipelines CI/CD. Experiencia práctica en desarrollo backend y despliegues en la nube. Busco aportar valor en equipos dinámicos, optimizando procesos de entrega de software y garantizando la fiabilidad de los sistemas.
+                </p>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-code" style="color: var(--secondary-color); margin-right: 10px;"></i> Tecnologías y Herramientas</h2>
+                <div class="skills-container">
+                    <span class="skill-badge">AWS</span>
+                    <span class="skill-badge">Microsoft Azure</span>
+                    <span class="skill-badge">Docker</span>
+                    <span class="skill-badge">GitHub Actions (CI/CD)</span>
+                    <span class="skill-badge">.NET / C#</span>
+                    <span class="skill-badge">Java</span>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">Redes</span>
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">Linux / Bash</span>
+                    <span class="skill-badge">Nginx</span>
+                </div>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-briefcase" style="color: var(--secondary-color); margin-right: 10px;"></i> Experiencia y Proyectos Destacados</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-title">Desarrollador Backend & Cloud (Prácticas)</span>
+                        <span class="timeline-date">Jun 2025 - Ago 2025</span>
+                    </div>
+                    <span class="timeline-subtitle">iKnovatio | Gijón, Asturias</span>
+                    <ul class="tasks">
+                        <li>Desarrollo e integración de APIs RESTful utilizando el framework .NET.</li>
+                        <li>Configuración de pipelines de Integración y Despliegue Continuo (CI/CD) en el entorno de Microsoft Azure.</li>
+                        <li>Gestión y despliegue automatizado de Web Apps en infraestructura Cloud (Azure), asegurando la estabilidad en los pases a producción.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-title">Becario de servicios informáticos</span>
+                        <span class="timeline-date">Noviembre 2025 - Presente</span>
+                    </div>
+                    <span class="timeline-subtitle">Universidad de Oviedo | Gijón, Asturias</span>
+                    <ul class="tasks">
+                        <li>Soporte técnico y resolución de incidencias (hardware, conectividad de red y equipos audiovisuales) para el personal docente.</li>
+                        <li>Mantenimiento y administración de aulas de informática, gestionando la instalación y actualización de software especializado bajo demanda.</li>
+                        <li>Creación y despliegue de imágenes de sistema (clonado masivo de discos) para el aprovisionamiento rápido y estandarización de equipos.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-title">Arquitectura CI/CD y Despliegue Cloud</span>
+                        <span class="timeline-date">Proyectos Personales</span>
+                    </div>
+                    <span class="timeline-subtitle">Portfolio DevOps</span>
+                    <ul class="tasks">
+                        <li>Diseño de un pipeline de Integración Continua utilizando GitHub Actions.</li>
+                        <li>Contenerización de aplicación web estática mediante Docker y Nginx.</li>
+                        <li>Implementación de Despliegue Continuo (CD) en plataforma Cloud (Render), consumiendo imágenes desde GitHub Container Registry.</li>
+                        <li>Esta web y más en GitHub...</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-graduation-cap" style="color: var(--secondary-color); margin-right: 10px;"></i> Educación</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-title">Grado en Ingeniería Informática en Tecnologías de la Información</span>
+                        <span class="timeline-date">Sep 2022 - Presente (4º Curso)</span>
+                    </div>
+                    <span class="timeline-subtitle">Universidad de Oviedo | Gijón, Asturias</span>
+                    <ul class="tasks">
+                        <li>Sólida formación teórica y práctica en sistemas operativos, redes de comunicaciones, bases de datos y arquitectura de computadores.</li>
+                        <li>Desarrollo de proyectos académicos aplicando patrones de diseño, principios de ingeniería de software y control de versiones (Git).</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-title">Programa de Intercambio Erasmus+ (Ingeniería Informática)</span>
+                        <span class="timeline-date">Sep 2024 - Feb 2025</span>
+                    </div>
+                    <span class="timeline-subtitle">Politechnika Śląska (Silesian University of Technology) | Gliwice, Polonia</span>
+                    <ul class="tasks">
+                        <li>Inmersión académica internacional cursando asignaturas técnicas del grado íntegramente en inglés.</li>
+                        <li>Desarrollo de habilidades de adaptabilidad, resolución de problemas en entornos nuevos y trabajo en equipo con perfiles multiculturales.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-language" style="color: var(--secondary-color); margin-right: 10px;"></i> Idiomas</h2>
+                <div class="skills-container">
+                    <span class="skill-badge" style="background-color: #f8fafc; border-color: #cbd5e1; color: var(--text-main);">🇪🇸 Español (Nativo)</span>
+                    <span class="skill-badge" style="background-color: #f8fafc; border-color: #cbd5e1; color: var(--text-main);">🇬🇧 Inglés (Nivel C1)</span>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
 </html>
