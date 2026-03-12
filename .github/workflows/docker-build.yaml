@@ -37,3 +37,7 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
+
+      # Avisamos a Render para que ponga al día la web automaticamente
+      - name: Avisar a Render para actualizar la web (CD)
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"

@@ -12,7 +12,7 @@ Este repositorio contiene mi primer proyecto práctico de infraestructura y cont
 * Git y GitHub (Control de versiones)
 * GitHub Actions (Integración Continua - CI)
 * GitHub Container Registry (Almacén de Imágenes en la nube)
-* Render (Despliegue Continuo - CD y Hosting Cloud)
+* Render & Webhooks (Despliegue Continuo - CD y Hosting Cloud)
 
 ## Entendiendo el Proyecto (Para Principiantes)
 
@@ -23,7 +23,7 @@ Si estás empezando en el mundo DevOps o Cloud, aquí tienes una explicación de
 * **Dockerfile:** El archivo de configuración donde definimos paso a paso cómo se debe construir la imagen de Docker.
 * **CI (Integración Continua):** Gracias a GitHub Actions, cada vez que se sube un cambio al repositorio, un "robot" comprueba automáticamente que la imagen de Docker se construye sin errores y la publica en el almacén de GitHub (GHCR).
 * **GitHub Actions (CI):** El proyecto incluye un pipeline automatizado. Cada vez que se sube nuevo código, un servidor de GitHub comprueba automáticamente que la imagen de Docker se puede construir correctamente sin errores.
-* **CD (Despliegue Continuo):** El repositorio está conectado a la plataforma Cloud Render. Al publicarse una nueva imagen válida en el almacén, el servidor en la nube la descarga y actualiza la web pública automáticamente y sin intervención manual.
+* **CD (Despliegue Continuo) mediante Webhooks:** El repositorio está conectado a la plataforma Cloud Render. A través de un **Deploy Hook** (un aviso automático) configurado en GitHub Actions, cada vez que el pipeline de CI termina con éxito y sube la imagen a GHCR, el servidor en la nube es notificado para que descargue la nueva versión y actualice la web pública en tiempo real y sin intervención manual.
 
 ## Instrucciones de Despliegue Local
 
