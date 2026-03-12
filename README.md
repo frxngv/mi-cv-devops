@@ -1,5 +1,7 @@
 # Portfolio: CV Web con Docker y Nginx
 
+🌍 **Web en vivo:** [Ver mi CV desplegado](https://mi-cv-devops-fran-latest.onrender.com/)
+
 Este repositorio contiene mi primer proyecto práctico de infraestructura y contenerización. Se trata de una página web personal estática, empaquetada y servida mediante contenedores Docker.
 
 ## Tecnologías utilizadas
@@ -10,6 +12,7 @@ Este repositorio contiene mi primer proyecto práctico de infraestructura y cont
 * Git y GitHub (Control de versiones)
 * GitHub Actions (Integración Continua - CI)
 * GitHub Container Registry (Almacén de Imágenes en la nube)
+* Render (Despliegue Continuo - CD y Hosting Cloud)
 
 ## Entendiendo el Proyecto (Para Principiantes)
 
@@ -20,6 +23,7 @@ Si estás empezando en el mundo DevOps o Cloud, aquí tienes una explicación de
 * **Dockerfile:** El archivo de configuración donde definimos paso a paso cómo se debe construir la imagen de Docker.
 * **CI (Integración Continua):** Gracias a GitHub Actions, cada vez que se sube un cambio al repositorio, un "robot" comprueba automáticamente que la imagen de Docker se construye sin errores y la publica en el almacén de GitHub (GHCR).
 * **GitHub Actions (CI):** El proyecto incluye un pipeline automatizado. Cada vez que se sube nuevo código, un servidor de GitHub comprueba automáticamente que la imagen de Docker se puede construir correctamente sin errores.
+* **CD (Despliegue Continuo):** El repositorio está conectado a la plataforma Cloud Render. Al publicarse una nueva imagen válida en el almacén, el servidor en la nube la descarga y actualiza la web pública automáticamente y sin intervención manual.
 
 ## Instrucciones de Despliegue Local
 
